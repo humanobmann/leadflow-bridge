@@ -1,0 +1,15 @@
+.....................                                                    [100%]
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.13.5-final-0 ________________
+
+Name                              Stmts   Miss  Cover   Missing
+---------------------------------------------------------------
+src/leadflow_bridge/__init__.py       1      0   100%
+src/leadflow_bridge/cli.py           53     15    72%   44-50, 55-61, 69
+src/leadflow_bridge/client.py        64     10    84%   39, 41, 43, 45, 78-79, 81, 83, 91, 97
+src/leadflow_bridge/importer.py      53      3    94%   56-58
+src/leadflow_bridge/models.py        16      0   100%
+src/leadflow_bridge/server.py        67      2    97%   31, 69
+---------------------------------------------------------------
+TOTAL                               254     30    88%
+21 passed in 0.83s

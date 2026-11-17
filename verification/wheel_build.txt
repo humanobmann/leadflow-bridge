@@ -1,0 +1,10 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /mnt/data/LeadFlow_Bridge_Pro_2_0
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: leadflow-bridge-demo
+  Building wheel for leadflow-bridge-demo (pyproject.toml): started
+  Building wheel for leadflow-bridge-demo (pyproject.toml): finished with status 'done'
+  Created wheel for leadflow-bridge-demo: filename=leadflow_bridge_demo-2.0.0-py3-none-any.whl size=17705 sha256=a447dcddb8eec0dec83853c607e161245ffec48d9ea8f170119aa28ba5edc336
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9iumvh05/wheels/6e/26/d6/442751dc8b461e977621770337c04e16b7c1628809c5a42009
+Successfully built leadflow-bridge-demo
