@@ -1,0 +1,46 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_database_connections_are_closed_after_transactions ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-10/test_database_connections_are_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7d4c96f230>
+
+    def test_database_connections_are_closed_after_transactions(tmp_path, monkeypatch):
+        """Connections must be closed, not merely committed by sqlite3's context manager."""
+        import sqlite3
+        import leadflow_bridge.server as server_module
+    
+        actual_connect = sqlite3.connect
+        opened = []
+    
+        class TrackingConnection(sqlite3.Connection):
+            closed_on_exit = False
+    
+            def close(self):
+                self.closed_on_exit = True
+                return super().close()
+    
+        def tracked_connect(*args, **kwargs):
+            result = actual_connect(*args, factory=TrackingConnection, **kwargs)
+            opened.append(result)
+            return result
+    
+        monkeypatch.setattr(server_module.sqlite3, 'connect', tracked_connect)
+        client = TestClient(create_app(tmp_path / 'leads.db', 'test-token'))
+        token = {'Authorization': 'Bearer test-token', 'Idempotency-Key': 'ID-CLOSE'}
+        payload = {'external_id': 'ID-CLOSE', 'name': 'Alex Demo',
+                   'email': 'alex@example.com', 'company': 'Demo', 'source': 'Web'}
+        assert client.post('/api/leads', json=payload, headers=token).status_code == 201
+        assert client.get('/api/leads', headers=token).status_code == 200
+        assert len(opened) >= 3
+>       assert all(conn.closed_on_exit for conn in opened), 'SQLite connections were not explicitly closed'
+E       AssertionError: SQLite connections were not explicitly closed
+E       assert False
+E        +  where False = all(<generator object test_database_connections_are_closed_after_transactions.<locals>.<genexpr> at 0x7f7d4c598700>)
+
+tests/test_hardening.py:102: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_hardening.py::test_database_connections_are_closed_after_transactions - AssertionError: SQLite connections were not explicitly closed
+assert False
+ +  where False = all(<generator object test_database_connections_are_closed_after_transactions.<locals>.<genexpr> at 0x7f7d4c598700>)
+1 failed in 0.35s

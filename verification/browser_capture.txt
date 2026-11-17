@@ -1,0 +1,1 @@
+Captured screenshot mode=browser_render_with_verified_api_response: /mnt/data/LeadFlow_Bridge_Pro_2_0/assets/demo_dashboard.png (641105 bytes)

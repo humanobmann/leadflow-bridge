@@ -1,0 +1,5 @@
+external_id,name,email,company,source
+LEAD-1001,Alex Rivera,alex.rivera@example.com,Northwind Demo,Website
+LEAD-1002,Jamie Carter,jamie.carter@example.com,Sample Studio,Contact Form
+LEAD-1003,Taylor Brooks,TAYLOR.BROOKS@EXAMPLE.COM,Example Services,Webinar
+LEAD-1004,Morgan Lee,morgan.lee@example.com,Demo Logistics,Event

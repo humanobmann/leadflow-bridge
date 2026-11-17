@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbfd"/><stop offset="1" stop-color="#ebf5f7"/></linearGradient></defs>
+<rect width="1600" height="1200" fill="url(#bg)"/>
+<g font-family="Inter,Arial,sans-serif"><rect x="76" y="68" width="88" height="9" rx="4" fill="#3dc5ae"/>
+<text x="76" y="167" fill="#1c5262" font-size="24" font-weight="800" letter-spacing="1">ARCHITECTURE  /  END TO END</text>
+<text x="72" y="276" fill="#132e43" font-size="79" font-weight="800">Five steps. One reliable import.</text>
+<text x="76" y="330" fill="#627d8e" font-size="29">A local, reproducible CSV to REST API workflow</text>
+<rect x="76" y="380" width="274" height="294" rx="22" fill="#ffffff" stroke="#c8dce3" stroke-width="2"/>
+        <circle cx="123" cy="430" r="22" fill="#d5eeec"/>
+        <text x="123" y="441" text-anchor="middle" fill="#177f7e" font-size="22" font-weight="800">01</text>
+        <text x="98" y="514" fill="#152f44" font-size="35" font-weight="800">CSV input</text>
+        <line x1="99" y1="547" x2="324" y2="547" stroke="#cadde2" stroke-width="2"/>
+        <text x="99" y="594" fill="#557083" font-size="23">Fictional lead data</text>
+        <text x="99" y="631" fill="#557083" font-size="23">source file</text><path d="M354 530 h19" fill="none" stroke="#38a69e" stroke-width="5"/><path d="M369 521 l11 9 -11 9" fill="none" stroke="#38a69e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="378" y="380" width="274" height="294" rx="22" fill="#e9faf6" stroke="#c8dce3" stroke-width="2"/>
+        <circle cx="425" cy="430" r="22" fill="#d5eeec"/>
+        <text x="425" y="441" text-anchor="middle" fill="#177f7e" font-size="22" font-weight="800">02</text>
+        <text x="400" y="514" fill="#152f44" font-size="35" font-weight="800">Validate</text>
+        <line x1="401" y1="547" x2="626" y2="547" stroke="#cadde2" stroke-width="2"/>
+        <text x="401" y="594" fill="#557083" font-size="23">Strict fields +</text>
+        <text x="401" y="631" fill="#557083" font-size="23">normalization</text><path d="M656 530 h19" fill="none" stroke="#38a69e" stroke-width="5"/><path d="M671 521 l11 9 -11 9" fill="none" stroke="#38a69e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="680" y="380" width="274" height="294" rx="22" fill="#ffffff" stroke="#c8dce3" stroke-width="2"/>
+        <circle cx="727" cy="430" r="22" fill="#d5eeec"/>
+        <text x="727" y="441" text-anchor="middle" fill="#177f7e" font-size="22" font-weight="800">03</text>
+        <text x="702" y="514" fill="#152f44" font-size="35" font-weight="800">Send</text>
+        <line x1="703" y1="547" x2="928" y2="547" stroke="#cadde2" stroke-width="2"/>
+        <text x="703" y="594" fill="#557083" font-size="23">Bearer token +</text>
+        <text x="703" y="631" fill="#557083" font-size="23">bounded retries</text><path d="M958 530 h19" fill="none" stroke="#38a69e" stroke-width="5"/><path d="M973 521 l11 9 -11 9" fill="none" stroke="#38a69e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="982" y="380" width="274" height="294" rx="22" fill="#e9faf6" stroke="#c8dce3" stroke-width="2"/>
+        <circle cx="1029" cy="430" r="22" fill="#d5eeec"/>
+        <text x="1029" y="441" text-anchor="middle" fill="#177f7e" font-size="22" font-weight="800">04</text>
+        <text x="1004" y="514" fill="#152f44" font-size="35" font-weight="800">Persist</text>
+        <line x1="1005" y1="547" x2="1230" y2="547" stroke="#cadde2" stroke-width="2"/>
+        <text x="1005" y="594" fill="#557083" font-size="23">FastAPI + SQLite</text>
+        <text x="1005" y="631" fill="#557083" font-size="23">idempotent keys</text><path d="M1260 530 h19" fill="none" stroke="#38a69e" stroke-width="5"/><path d="M1275 521 l11 9 -11 9" fill="none" stroke="#38a69e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="1284" y="380" width="274" height="294" rx="22" fill="#ffffff" stroke="#c8dce3" stroke-width="2"/>
+        <circle cx="1331" cy="430" r="22" fill="#d5eeec"/>
+        <text x="1331" y="441" text-anchor="middle" fill="#177f7e" font-size="22" font-weight="800">05</text>
+        <text x="1306" y="514" fill="#152f44" font-size="35" font-weight="800">Verify</text>
+        <line x1="1307" y1="547" x2="1532" y2="547" stroke="#cadde2" stroke-width="2"/>
+        <text x="1307" y="594" fill="#557083" font-size="23">Safe summary +</text>
+        <text x="1307" y="631" fill="#557083" font-size="23">replay check</text>
+<rect x="78" y="755" width="699" height="198" rx="24" fill="#14334b"/>
+<circle cx="141" cy="814" r="17" fill="#65dfba"/>
+<text x="178" y="826" fill="#fff" font-size="32" font-weight="800">Recovery built in</text>
+<text x="113" y="886" fill="#b7d4dc" font-size="26">Retry temporary HTTP failures with</text>
+<text x="113" y="918" fill="#b7d4dc" font-size="26">bounded delays and safe errors.</text>
+<rect x="804" y="755" width="715" height="198" rx="24" fill="#dff4ee" stroke="#b0dbd0" stroke-width="2"/>
+<circle cx="867" cy="814" r="17" fill="#219c82"/>
+<text x="904" y="826" fill="#153f4b" font-size="32" font-weight="800">Duplicates prevented</text>
+<text x="840" y="886" fill="#426875" font-size="26">Identical replay returns existing;</text>
+<text x="840" y="918" fill="#426875" font-size="26">conflicting content returns HTTP 409.</text>
+<path d="M77 1024 H1519" stroke="#bfd5da" stroke-width="2"/>
+<text x="78" y="1086" fill="#335968" font-size="27" font-weight="750">Python · FastAPI · HTTPX · Pydantic · SQLite · Pytest</text>
+<text x="78" y="1130" fill="#77909a" font-size="21">Independent demonstration with fictional data. No external CRM or customer deployment.</text>
+</g></svg>

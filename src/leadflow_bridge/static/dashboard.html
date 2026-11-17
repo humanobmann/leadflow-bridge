@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>LeadFlow Bridge | Local demo console</title>
+  <style>
+    :root{--bg:#080f1b;--panel:#121f30;--panel2:#15263a;--line:#2a4057;--text:#f1f7fb;--muted:#98adc2;--cyan:#68d8e9;--green:#55d5ae;--orange:#ffce81}
+    *{box-sizing:border-box}body{margin:0;color:var(--text);background:radial-gradient(circle at 92% 2%,#1a4058 0,transparent 37%),linear-gradient(145deg,#08111e,#0d1c2d 75%);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+    .shell{max-width:1420px;margin:auto;padding:42px 44px 72px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:48px}
+    .identity{display:flex;align-items:center;gap:14px}.mark{height:42px;width:42px;display:grid;place-items:center;border:1px solid #5acbc7;border-radius:13px;background:#153e47;color:#91f1de;font-size:25px;font-weight:750}
+    .product{font-size:21px;font-weight:760;letter-spacing:-.6px}.subbrand{color:var(--muted);font-size:13px;margin-top:2px}.pill{border:1px solid #476477;padding:9px 13px;border-radius:90px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:#aad4dd;font-weight:740}
+    .intro{display:grid;grid-template-columns:1fr auto;gap:35px;align-items:end;margin-bottom:33px}.eyebrow{color:var(--green);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}.intro h1{font-size:clamp(37px,4vw,57px);line-height:1.08;margin:0 0 12px;font-weight:800;letter-spacing:-2.4px}.intro p{color:var(--muted);font-size:17px;line-height:1.6;margin:0;max-width:660px}
+    .auth{background:#102b37;border:1px solid #275568;border-radius:17px;padding:16px 18px;min-width:326px;display:flex;align-items:center;gap:10px}.auth input{background:#0e1d2a;border:1px solid #3a6673;color:var(--text);border-radius:8px;padding:12px;min-width:0;flex:1;width:120px;outline-offset:3px}.auth button{background:#72dcc7;border:0;color:#082327;font-weight:800;border-radius:8px;padding:12px 16px;cursor:pointer}.auth button:hover{background:#9af1df}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:0 0 24px}.kpi{background:linear-gradient(135deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:20px;padding:25px 25px 22px;min-height:156px}.kpi span{color:#abc0d1;font-size:13px;font-weight:680;text-transform:uppercase;letter-spacing:1px}.kpi .value{font-size:48px;font-weight:800;letter-spacing:-2.2px;margin:12px 0 5px}.kpi small{font-size:12px;color:#8aa5b8}
+    .lower{display:grid;grid-template-columns:1.62fr 1fr;gap:24px}.panel{background:linear-gradient(145deg,#122136,#0c1b2d);border:1px solid #294056;border-radius:20px;padding:24px;min-width:0}.panel h2{margin:0;font-size:20px;font-weight:760;letter-spacing:-.5px}.panel .kicker{color:var(--muted);font-size:13px;margin:7px 0 22px}
+    table{width:100%;border-collapse:collapse;text-align:left}th{color:#9db3c4;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:750;padding:15px 8px;border-bottom:1px solid #345069}td{padding:17px 8px;border-bottom:1px solid #273f52;color:#dbe6ee;font-size:14px}td:nth-child(2){color:#95afc3}tr:last-child td{border-bottom:0}.tag{display:inline-block;color:#65e1b8;background:#133d3f;border:1px solid #2a7565;padding:5px 9px;border-radius:10px;font-size:12px}
+    .bar-line{margin-bottom:25px}.bar-header{display:flex;justify-content:space-between;color:#d3e6ee;font-size:14px;margin-bottom:9px}.bar{height:11px;border-radius:20px;background:#263a4e;overflow:hidden}.bar i{height:100%;display:block;background:linear-gradient(90deg,#38bca9,#75dcf0);border-radius:20px;width:0%;transition:width .3s}
+    .status{min-height:35px;color:#9ad3df;font-size:13px;margin-top:13px}.footnote{margin-top:28px;font-size:12px;color:#7896aa;border-top:1px solid #20384c;padding-top:22px;line-height:1.7}.footnote strong{color:#bbd3e0}
+    @media(max-width:1050px){.intro{grid-template-columns:1fr}.auth{min-width:0;max-width:500px}.lower{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:590px){.shell{padding:28px 16px}.top{align-items:flex-start}.intro h1{letter-spacing:-1px}.kpis{gap:9px}.kpi{min-height:130px;padding:17px}.kpi .value{font-size:37px}.panel{padding:17px}table{display:block;overflow-x:auto;white-space:nowrap}.pill{font-size:9px}}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <header class="top"><div class="identity"><div class="mark" aria-hidden="true">↗</div><div><div class="product">LeadFlow Bridge</div><div class="subbrand">Python automation · REST API integration</div></div></div><div class="pill">Local demo · fictional data</div></header>
+  <section class="intro"><div><div class="eyebrow">API integration / operational proof</div><h1>Reliable data in.<br>Clean records out.</h1><p>A working local demonstration of validated CSV imports, authenticated REST requests and duplicate-safe storage.</p></div>
+    <form class="auth" id="auth-form"><label for="api-token" class="sr">API token</label><input type="password" id="api-token" autocomplete="off" spellcheck="false" placeholder="Local demo token" aria-label="Local demo token" required><button type="submit">Load data</button></form></section>
+  <section class="kpis" aria-label="Demo stats"><div class="kpi"><span>Stored leads</span><div class="value" id="stat-count">—</div><small>Authenticated API response</small></div><div class="kpi"><span>Unique IDs shown</span><div class="value" id="stat-unique">—</div><small>Database-level idempotency</small></div><div class="kpi"><span>Sources shown</span><div class="value" id="stat-sources">—</div><small>In the displayed page</small></div><div class="kpi"><span>API connection</span><div class="value" id="stat-http" style="font-size:30px;padding-top:14px">Locked</div><small id="api-detail">Token required</small></div></section>
+  <section class="lower"><div class="panel"><h2>Imported contacts</h2><p class="kicker">Live read-only results from the local demo database</p><table><thead><tr><th>External ID</th><th>Contact</th><th>Company</th><th>Source</th></tr></thead><tbody id="lead-rows"><tr><td colspan="4">Connect to local demo to load the records.</td></tr></tbody></table></div><div class="panel"><h2>Source distribution</h2><p class="kicker">Actual values from authenticated API response</p><div id="source-bars"><p style="color:#91aabc;font-size:14px">Waiting for connection</p></div><p id="status" class="status" role="status" aria-live="polite">No data loaded.</p></div></section>
+  <div class="footnote"><strong>Local demonstration only.</strong> Fictional records. No commercial CRM connection or client outcome is claimed. The API token is kept only in page memory and is never stored by this interface.</div>
+</main>
+<script>
+'use strict';
+const $ = (id) => document.getElementById(id);
+const write = (id, text) => {$(id).textContent = String(text)};
+$('auth-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const token = $('api-token').value;
+  write('status','Connecting to local CRM API…');
+  try {
+    const response = await fetch('/api/leads?limit=1000', {headers:{'Authorization':'Bearer ' + token}, cache:'no-store'});
+    if (!response.ok) throw new Error(response.status === 401 ? 'Invalid token' : 'HTTP ' + response.status);
+    const payload = await response.json();
+    if (!Array.isArray(payload.leads) || !Number.isInteger(payload.total)) throw new Error('Unexpected response');
+    const items = payload.leads;
+    const sources = new Map();
+    for (const entry of items) sources.set(entry.source || 'Unspecified', (sources.get(entry.source || 'Unspecified') || 0) + 1);
+    write('stat-count',payload.total);write('stat-unique',new Set(items.map(x=>x.external_id)).size);write('stat-sources',sources.size);
+    write('stat-http','200 OK');write('api-detail','Authenticated connection');
+    const body = $('lead-rows');body.replaceChildren();
+    for (const entry of items) {
+      const row = document.createElement('tr');
+      for (const key of ['external_id','name','company','source']) {const td=document.createElement('td');td.textContent=entry[key] || '—';row.appendChild(td)}
+      body.appendChild(row);
+    }
+    if (!items.length) {const row=document.createElement('tr');const td=document.createElement('td');td.colSpan=4;td.textContent='No demo contacts yet.';row.appendChild(td);body.appendChild(row)}
+    const barContainer = $('source-bars');barContainer.replaceChildren();
+    for (const [source,count] of [...sources.entries()].sort((a,b)=>b[1]-a[1])) {
+      const section=document.createElement('div');section.className='bar-line';
+      const heading=document.createElement('div');heading.className='bar-header';
+      const label=document.createElement('span');label.textContent=source;const amount=document.createElement('span');amount.textContent=String(count);
+      heading.append(label,amount);
+      const track=document.createElement('div');track.className='bar';const fill=document.createElement('i');fill.style.width=(count/items.length*100)+'%';track.appendChild(fill);
+      section.append(heading,track);barContainer.appendChild(section);
+    }
+    $('api-token').value='';
+    write('status',`Loaded ${items.length} fictional demo records.`);
+  } catch (error) {
+    write('stat-http','Error');write('api-detail','Check local token');
+    write('status',error instanceof Error ? error.message : 'Request failed');
+  }
+});
+</script>
+</body></html>
